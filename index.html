@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ accordion</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        font-family: "Work Sans";
+      }
+      body {
+        background-color: hsl(275, 100%, 97%);
+        color: hsl(292, 42%, 14%);
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .cmpt {
+        background-color: hsl(0, 0%, 100%);
+        max-width: 500px;
+        width: 50%;
+        border-radius: 1rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-shadow: 0px 1px 1px rgba(140, 105, 145, 0.02),
+          0px 5px 4px rgba(140, 105, 145, 0.03),
+          0px 12px 9px rgba(140, 105, 145, 0.05),
+          0px 20px 15px rgba(140, 105, 145, 0.06),
+          0px 32px 24px rgba(140, 105, 145, 0.08);
+      }
+      .main-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .heading {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+      }
+      .bg1 {
+        width: 100%;
+        margin: 0px;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+      }
+      .dropdown {
+        width: 100%;
+        border-bottom: 1px solid hsl(275, 100%, 97%);
+      }
+
+      .accordian {
+        width: 100%;
+        text-align: left;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: hsl(0, 0%, 100%);
+        &:hover {
+          transition: 0.4s ease;
+          color: hsl(292, 92%, 44%);
+        }
+      }
+
+      button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .close {
+        display: none;
+      }
+
+      .panel {
+        display: none;
+        padding: 1rem;
+        color: hsl(292, 16%, 49%);
+        background-color: hsl(0, 0%, 100%);
+      }
+      .attribution {
+        position: absolute;
+        bottom: 2px;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media (max-width: 768px) {
+        .cmpt {
+          width: 60%;
+        }
+      }
+      @media (max-width: 450px) {
+        .cmpt {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-page">
+      <img
+        src="./assets/images/background-pattern-desktop.svg"
+        alt=""
+        class="bg1"
+      />
+      <div class="cmpt">
+        <div class="heading">
+          <img src="./assets/images/icon-star.svg" alt="" />
+          <h1>FAQs</h1>
+        </div>
+        <div class="dropdown">
+          <button class="accordian">
+            What is Frontend Mentor, and how will it help me?
+            <img src="./assets/images/icon-plus.svg" alt="" class="open" /><img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="close"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="accordian">
+            Is Frontend Mentor free?
+            <img src="./assets/images/icon-plus.svg" alt="" class="open" /><img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="close"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="accordian">
+            Can I use Frontend Mentor projects in my portfolio?
+            <img src="./assets/images/icon-plus.svg" alt="" class="open" /><img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="close"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="accordian">
+            How can I get help if I'm stuck on a Frontend Mentor challenge?
+            <img src="./assets/images/icon-plus.svg" alt="" class="open" /><img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="close"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName("accordian");
+      var cls = document.getElementsByClassName("close");
+      var opn = document.getElementsByClassName("open");
+      var i = 0;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
